@@ -32,9 +32,5 @@ if __name__=="__main__":
     all_files = list_files(basepath)
 
 
-# prova
-# prova 2
-# prova 3
-
 
 

@@ -11,27 +11,62 @@
 import nibabel.freesurfer as fs
 import nibabel as nb
 import os
+import json
+from monai.bundle import run
 
+def read_annot(path, annotname):
+    return fs.read_annot(str(path + annotname))
 
-def readannot(path, annotname):
-    return fs.read_annot("")
+def read_img(path, imgname):
+    return nb.load(str(path + imgname))
 
-def readimg(path, imgname):
-    return nb.load("")
+def load_data(all_files_list):
+
 
 def list_files(dir):
-        r = []
+        r_img = []
+        r_annot = []
+
         for root, dirs, files in os.walk(dir):
             for name in files:
-                r.append(os.path.join(root, name))
-        return r
+                if name.split(".")[-1] == "annot":
+                    r_img.append(os.path.join(root, name))
+                elif name.split(".")[-2] == "T1":
+                    r_annot.append(os.path.join(root, name))
+
+        return {
+            "r_img":r_img,
+            "r_annot":r_annot
+        }
 
 if __name__=="__main__":
-    basepath = "ciao"
+    basepath = "media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
 
     all_files = list_files(basepath)
 
+    # Serializing json
+    json_object = json.dumps(all_files, indent=4)
+
+    # Writing to sample.json
+    with open("all:files.json", "w") as outfile:
+        outfile.write(json_object)
+
+    #run(runner_id=None, meta_file=None, config_file=None, logging_file=None, args_file=None)
+    #run(None, meta_file="configs/metadata.json", config_file="configs/train.json", logging_file="configs/logging.conf", args_file=None)
 
 
-# prova 5
-#prova 4
+"""
+funzioni 
+
+read img
+read annot
+
+load all data (magari non serve nemmeno)
+
+load 
+
+
+prende solo i file che hanno le estensioni giuste (.annot)
+
+
+"""

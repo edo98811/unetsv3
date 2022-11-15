@@ -23,7 +23,7 @@ def list_files(dir):
                 l_name = name.split(".")
                 if len(l_name) < 2:
                     continue
-                if l_name[-2] == "aseg":
+                if l_name[-2] == "aseg" and l_name[-1] == "mgz":
                     r_label.append(os.path.join(root, name))
                 elif l_name[-2] == "T1":
                     r_img.append(os.path.join(root, name))

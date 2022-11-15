@@ -14,7 +14,7 @@ def read_img(path, imgname):
 
 def list_files(dir):
         r_img = []
-        r_annot = []
+        r_label = []
         #r_all = []
 
         for root, dirs, files in os.walk(dir):
@@ -23,15 +23,15 @@ def list_files(dir):
                 l_name = name.split(".")
                 if len(l_name) < 2:
                     continue
-                if l_name[-1] == "annot":
-                    r_annot.append(os.path.join(root, name))
+                if l_name[-2] == "aseg":
+                    r_label.append(os.path.join(root, name))
                 elif l_name[-2] == "T1":
                     r_img.append(os.path.join(root, name))
 
         return {
             #"r_all":r_all,
             "r_img":r_img,
-            "r_annot":r_annot
+            "r_annot":r_label
         }
 
 def write_dict(all_files, filename):

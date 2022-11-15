@@ -13,15 +13,17 @@ import data_manipulation as dm
 
 if __name__ == "__main__":
 
-    # data_list = dm.load_dict("directory")
+    data_list = dm.load_dict("img_and_annot")
+
+    dm.convert_img(data_list["r_label"])
+    dm.convert_img(data_list["r_label"])
+
+"""
     basepath = "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
 
     all_files = dm.list_files(basepath)
     dm.write_dict(all_files, "img_and_annot")
-    #  dm.convert_img(data_list["r_img"])
-    #  dm.convert_img(data_list["r_img"])
-
-"""
+    
     basepath = "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
 
     all_files = list_files(basepath)

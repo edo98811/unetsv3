@@ -47,14 +47,14 @@ def load_dict(filename):
     return img_dict
 
 def convert_img(img_list):
-    if not os.path.isdir("dataset"):
-        os.makedirs("dataset")
+    if not os.path.isdir("../dataset"):
+        os.makedirs("../dataset")
 
     for img_name in img_list:
 
         img = nib.load(img_name)
 
         subj = img_name.split("/")[-3]
-        nib.save(img, f"dataset/{subj}_T1.nii.gz")
+        nib.save(img, f"../dataset/{subj}_T1.nii.gz")
 
 

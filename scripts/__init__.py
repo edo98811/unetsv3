@@ -32,11 +32,12 @@ def list_files(dir):
         for root, dirs, files in os.walk(dir):
             r_all.append(os.path.join(root))
             for name in files:
-                if len(name.split(".")) > 2:
+                l_name = name.split(".")
+                if len(l_name) < 2:
                     continue
-                if name.split(".")[-1] == "annot":
+                if l_name[-1] == "annot":
                     r_img.append(os.path.join(root, name))
-                elif name.split(".")[-2] == "T1":
+                elif l_name[-2] == "T1":
                     r_annot.append(os.path.join(root, name))
 
         return {

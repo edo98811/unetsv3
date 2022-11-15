@@ -42,14 +42,14 @@ def list_files(dir):
             "r_img":r_img,
             "r_annot":r_annot
         }
-def write_file(json, filename):
+def write_file(all_files, filename):
     json_object = json.dumps(all_files, indent=4)
 
     with open(filename +".json", "w") as outfile:
         outfile.write(json_object)
 
 if __name__=="__main__":
-    basepath = "media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
+    basepath = "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
 
     all_files = list_files(basepath)
 

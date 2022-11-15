@@ -5,6 +5,9 @@
     <orderEntry type="jdk" jdkName="Python 3.9.12 WSL (Ubuntu): (/home/edoardo/.virtualenvs/webapp/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="C:\Users\edoar\Dropbox (Politecnico Di Torino Studenti)\Tesi\codici\wholeBrainSeg_Large_UNEST_segmentation_v0.2.0\requirements-all.txt" />
+  </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />

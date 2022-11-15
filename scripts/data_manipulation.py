@@ -42,7 +42,7 @@ def write_dict(all_files, filename):
 
 def load_dict(filename):
     with open(filename +".json", "r") as outfile:
-        img_dict = json.load(outfile.load())
+        img_dict = json.load(outfile)
 
     return img_dict
 

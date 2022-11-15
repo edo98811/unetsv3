@@ -50,12 +50,11 @@ def convert_img(img_list):
     if not os.path.isdir("dataset"):
         os.makedirs("dataset")
 
-    for img in img_list:
-        type(img)
-        len(img)
+    for img_name in img_list:
+
         img = nib.load(img)
 
-        subj = img.split("/")[-2]
+        subj = img_name.split("/")[-2]
         nib.save(img, f"dataset/{subj}_T1.nii.gz")
 
 

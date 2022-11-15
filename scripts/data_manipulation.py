@@ -54,7 +54,7 @@ def convert_img(img_list):
 
         img = nib.load(img_name)
 
-        subj = img_name.split("/")[-2]
+        subj = img_name.split("/")[-3]
         nib.save(img, f"dataset/{subj}_T1.nii.gz")
 
 

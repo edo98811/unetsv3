@@ -8,8 +8,8 @@
     "ckpt_dir": "$@bundle_root + '/models'",
     "output_dir": "$@bundle_root + '/eval'",
     "dataset_dir": "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/",
-    "images": "$list(sorted(glob.glob(@dataset_dir + '/*/mri/T1.mgz')))",
-    "labels": "$list(sorted(glob.glob(@dataset_dir + '/*/labels/rh.mpm.vpnl.annot')))",
+    "images": "$list(sorted(glob.glob(@dataset_dir + '*/mri/T1.mgz')))",
+    "labels": "$list(sorted(glob.glob(@dataset_dir + '*/labels/rh.mpm.vpnl.annot')))",
     "val_interval": 5,
     "device": "$torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')",
     "network_def": {

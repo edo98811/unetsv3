@@ -27,10 +27,10 @@ def load_data(all_files_list):
 def list_files(dir):
         r_img = []
         r_annot = []
-        r_all = []
+        #r_all = []
 
         for root, dirs, files in os.walk(dir):
-            r_all.append(os.path.join(root))
+            #r_all.append(os.path.join(root))
             for name in files:
                 l_name = name.split(".")
                 if len(l_name) < 2:
@@ -41,7 +41,7 @@ def list_files(dir):
                     r_img.append(os.path.join(root, name))
 
         return {
-            "r_all":r_all,
+            #"r_all":r_all,
             "r_img":r_img,
             "r_annot":r_annot
         }

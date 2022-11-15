@@ -32,6 +32,8 @@ def list_files(dir):
         for root, dirs, files in os.walk(dir):
             r_all.append(os.path.join(root))
             for name in files:
+                if name.split(".").length() > 2:
+                    continue
                 if name.split(".")[-1] == "annot":
                     r_img.append(os.path.join(root, name))
                 elif name.split(".")[-2] == "T1":

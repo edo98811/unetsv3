@@ -36,9 +36,9 @@ def list_files(dir):
                 if len(l_name) < 2:
                     continue
                 if l_name[-1] == "annot":
-                    r_img.append(os.path.join(root, name))
-                elif l_name[-2] == "T1":
                     r_annot.append(os.path.join(root, name))
+                elif l_name[-2] == "T1":
+                    r_img.append(os.path.join(root, name))
 
         return {
             "r_all":r_all,

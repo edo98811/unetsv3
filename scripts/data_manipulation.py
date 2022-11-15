@@ -41,8 +41,8 @@ def write_dict(all_files, filename):
         outfile.write(json_object)
 
 def load_dict(filename):
-    with open(filename +".json", "r") as outfile:
-        img_dict = json.load(outfile)
+    with open(filename +".json", "r") as infile:
+        img_dict = json.load(infile)
 
     return img_dict
 
@@ -51,7 +51,8 @@ def convert_img(img_list):
         os.makedirs("dataset")
 
     for img in img_list:
-
+        type(img)
+        len(img)
         img = nib.load(img)
 
         subj = img.split("/")[-2]

@@ -9,6 +9,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
+
+
+"""
 import data_manipulation as dm
 
 if __name__ == "__main__":
@@ -18,7 +23,6 @@ if __name__ == "__main__":
     dm.convert_img(data_list["r_label"])
     dm.convert_img(data_list["r_label"])
 
-"""
     basepath = "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/"
 
     all_files = dm.list_files(basepath)

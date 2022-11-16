@@ -84,7 +84,7 @@ class UNesT(nn.Module):
             embed_dims=embed_dim,
             num_heads=num_heads,
             depths=depths,
-            num_classes=1000,
+            num_classes=33,
             mlp_ratio=4.0,
             qkv_bias=True,
             drop_rate=0.0,

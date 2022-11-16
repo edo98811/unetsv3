@@ -7,9 +7,9 @@
     "bundle_root": ".",
     "ckpt_dir": "$@bundle_root + '/models'",
     "output_dir": "$@bundle_root + '/eval'",
-    "dataset_dir": "/media/neuropsycad/disk12t/VascoDiogo/OASIS/FS7/",
+    "dataset_dir": "/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3",
     "images": "$list(sorted(glob.glob(@dataset_dir + '/dataset/*.nii.gz')))",
-    "labels": "$list(sorted(glob.glob(@dataset_dir + '*/labels/*.nii.gz')))",
+    "labels": "$list(sorted(glob.glob(@dataset_dir + '/labels/*.nii.gz')))",
     "val_interval": 5,
     "device": "$torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')",
     "network_def": {

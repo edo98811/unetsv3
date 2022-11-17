@@ -6,27 +6,34 @@ import os
 import json
 from monai.bundle import run
 
-def read_annot(path, annotname):
+def read_annot(annotname, path=""):
     return fs.read_annot(str(path + annotname))
 
-def read_img(path, imgname):
+def read_img(imgname, path = ""):
     return nib.load(str(path + imgname))
 
-def list_files(dir):
-        r_img = []
-        r_label = []
-        #r_all = []
+def list_files(dir,imgname,labelname,filetype="nii.gz"):
+    """
+    input
+        imgname = str
+        labelname = str
+        filetype = str, default = nii.gz
+    """
 
-        for root, dirs, files in os.walk(dir):
-            #r_all.append(os.path.join(root))
-            for name in files:
-                l_name = name.split(".")
-                if len(l_name) < 2:
-                    continue
-                if l_name[-2] == "aseg" and l_name[-1] == "mgz":
-                    r_label.append(os.path.join(root, name))
-                elif l_name[-2] == "T1":
-                    r_img.append(os.path.join(root, name))
+    r_img = []
+    r_label = []
+    #r_all = []
+    fl_len = len(filetype.split("."))
+    for root, dirs, files in os.walk(dir):
+        #r_all.append(os.path.join(root))
+        for name in files:
+            l_name = name.split(".")
+            if len(l_name) < fl_len+1:
+                continue
+            if l_name[-fl_len-1] == imgname and l_name[-fl_len] == filetype:
+                r_label.append(os.path.join(root, name))
+            elif l_name[-fl_len-1] == labelname:
+                r_img.append(os.path.join(root, name))
 
         return {
             #"r_all":r_all,
@@ -56,5 +63,7 @@ def convert_img(img_list):
 
         subj = img_name.split("/")[-3]
         nib.save(img, f"../dataset/{subj}_T1.nii.gz")
+
+
 
 

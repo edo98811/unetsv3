@@ -9,6 +9,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import data_manipulation as dm
+import data_visualization as dv
+
+if __name__ == '__main__':
+    basepath =  '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
+
+    files = dm.list_files(basepath)
+    imglist = []
+
+    for filename,i in enumerate(files["r_imm"]):
+        imglist.append(dm.read_img(filename))
+
+    dv.see_random_slice(imglist[1])
 
 
 

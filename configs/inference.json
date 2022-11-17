@@ -5,7 +5,7 @@
     ],
     "bundle_root": ".",
     "output_dir": "$@bundle_root + '/eval'",
-    "dataset_dir": "$@bundle_root + '/dataset/images'",
+    "dataset_dir": "$@bundle_root + '/dataset'",
     "datalist": "$list(sorted(glob.glob(@dataset_dir + '/*.nii.gz')))",
     "device": "$torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')",
     "network_def": {

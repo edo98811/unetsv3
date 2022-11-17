@@ -15,7 +15,7 @@
     "network_def": {
         "_target_": "scripts.networks.unest_base_patch_4.UNesT",
         "in_channels": 1,
-        "out_channels": 133,
+        "out_channels": 33,
         "patch_size": 4,
         "depths": [
             2,

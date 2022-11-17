@@ -9,4 +9,3 @@ net = net.cuda().half()
 out = net(data)
 out.backward(torch.randn_like(out))
 torch.cuda.synchronize()
-git add

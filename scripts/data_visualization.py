@@ -7,7 +7,7 @@ def see_random_slice(img):
     rows, cols = 4, 4
     for i in range(1, rows * cols + 1):
         random_idx = torch.randint(0, img.shape[0], size=[1]).item() #transforms in normal python int
-        img, label = img[random_idx,:,:]
+        img = img.dataobj[random_idx,:,:]
         fig.add_subplot(rows, cols, i)
         plt.imshow(img.squeeze(), cmap="gray")
         plt.title(f"slice: {random_idx}")

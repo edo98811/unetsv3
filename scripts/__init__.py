@@ -18,10 +18,12 @@ if __name__ == '__main__':
     files = dm.list_files(basepath,"*")
     imglist = []
 
-    for filename,i in enumerate(files["r_imm"]):
+    for filename,i in enumerate(files["r_img"]):
         imglist.append(dm.read_img(filename))
 
-    dv.see_random_slice(imglist[1])
+    print(len(imglist))
+    print(imglist[0].shape)
+    dv.see_random_slice(imglist[0])
 
 
 

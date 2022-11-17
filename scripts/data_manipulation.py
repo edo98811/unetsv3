@@ -30,7 +30,7 @@ def list_files(dir,imgname,labelname="",filetype="nii.gz"):
             l_name = name.split(".")
             if len(l_name) < fl_len+1:
                 continue
-            if l_name[-fl_len-1] == imgname and l_name[-fl_len] == filetype:
+            if l_name[-fl_len-1] == imgname:# and l_name[-fl_len:-1] == filetype:
                 r_label.append(os.path.join(root, name))
             elif l_name[-fl_len-1] == labelname:
                 r_img.append(os.path.join(root, name))

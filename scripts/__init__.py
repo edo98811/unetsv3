@@ -18,7 +18,7 @@ if __name__ == '__main__':
     files = dm.list_files(basepath,"*")
     imglist = []
 
-    for filename,i in enumerate(files["r_img"]):
+    for filename in files["r_img"]:
         imglist.append(dm.read_img(filename))
 
     print(len(imglist))

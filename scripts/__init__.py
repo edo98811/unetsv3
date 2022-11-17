@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print(len(imglist))
     print(imglist[0].shape)
     print(type(imglist[0]))
-    dv.see_random_slice(imglist[0])
+    dv.see_random_slice(imglist[0].dataobj)
 
 
 

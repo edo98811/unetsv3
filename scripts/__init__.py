@@ -15,7 +15,7 @@ import data_visualization as dv
 if __name__ == '__main__':
     basepath =  '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
 
-    files = dm.list_files(basepath)
+    files = dm.list_files(basepath,"*")
     imglist = []
 
     for filename,i in enumerate(files["r_imm"]):

@@ -12,7 +12,7 @@ def read_annot(annotname, path=""):
 def read_img(imgname, path = ""):
     return nib.load(str(path + imgname))
 
-def list_files(dir,imgname,labelname,filetype="nii.gz"):
+def list_files(dir,imgname,labelname="",filetype="nii.gz"):
     """
     input
         imgname = str

@@ -33,7 +33,7 @@ class MriDataset(Dataset):
         self.transform = transform
 
     def __len__(self):
-        return len(self.files["r_img"]*self.img_dim)
+        return len(self.dataset_list*self.img_dim)
 
     def __getitem__(self, idx):
 

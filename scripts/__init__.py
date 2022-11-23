@@ -14,6 +14,8 @@
 import data_manipulation as dm
 import data_visualization as dv
 from dataset_class import MriDataset
+import torch
+
 from torch.utils.data import dataloader
 
 from torch.utils import data
@@ -28,7 +30,7 @@ if __name__ == '__main__':
 
     print(dataset.__len__())
 
-    example = dataset[int(len/30)]
+    example = dataset[torch.int8((len/30))]
 
     dv.see_data_sample(example)
 

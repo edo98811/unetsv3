@@ -31,7 +31,7 @@ if __name__ == '__main__':
     dataset_len = dataset.__len__()
     print(dataset_len)
 
-    example = dataset[torch.int8((dataset_len/30))]
+    example = dataset[int(dataset_len/30)]
 
     dv.see_data_sample(example)
 

@@ -45,13 +45,13 @@ class MriDataset(Dataset):
         vol_img = read_img(self.dataset_list[img_n])
         vol_label = read_img(self.dataset_list[img_n])
 
-        if self.img_dim == 0:
+        if self.data_plane == 0:
             img = vol_img[img_idx,:,:]
             label = vol_label[img_idx,:,:]
-        elif self.img_dim == 1:
+        elif self.data_plane == 1:
             img = vol_img[ :, img_idx, :]
             label = vol_label[ :, img_idx, :]
-        elif self.img_dim == 2:
+        elif self.data_plane == 2:
             img = vol_img[:,: ,img_idx]
             label = vol_label[:,: ,img_idx]
 

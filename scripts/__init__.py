@@ -13,18 +13,33 @@
 
 import data_manipulation as dm
 import data_visualization as dv
+from dataset_class import MriDataset
+from torch.utils.data import dataloader
 
 from torch.utils import data
 
 if __name__ == '__main__':
-    basepath = '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
 
+    # TODO: aggiungere controllo sull'esistenza del file
+    # try:
+    files_path = '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/scripts/img_and_annot.json'
+    # basepath = '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
+    dataset = MriDataset(files_path, 0)
+
+    print(dataset.__len__())
+
+    example = dataset.__getitem__(int(len/30))
+
+    dv.see_data_sample(example)
 
     # data.dataloader()
-    #files = dm.list_files(basepath, "*")
-    files = dm.load_dict("img_and_annot")
-    img_list = []
-    label_list = []
+    # files = dm.list_files(basepath, "*")
+    # files = dm.load_dict("img_and_annot")
+    # img_list = []
+    # label_list = []
+
+
+
     #
     #
     #
@@ -37,16 +52,17 @@ if __name__ == '__main__':
     #     pin_memory=True,
     #)
 
-    for filename in files["r_img"]:
-        img_list.append(dm.read_img(filename))
-    for filename in files["r_label"]:
-        label_list.append(dm.read_img(filename))
 
-
-    print(len(label_list))
-    print(label_list[0].shape)
-    print(type(label_list[0]))
-    dv.see_random_slice(label_list[0].dataobj)
+    # for filename in files["r_img"]:
+    #     img_list.append(dm.read_img(filename))
+    # for filename in files["r_label"]:
+    #     label_list.append(dm.read_img(filename))
+    #
+    #
+    # print(len(label_list))
+    # print(label_list[0].shape)
+    # print(type(label_list[0]))
+    # dv.see_random_slice(label_list[0].dataobj)
 """
 import data_manipulation as dm
 

@@ -11,3 +11,19 @@ def see_random_slice(img):
         plt.imshow(img[random_idx,:,:].squeeze(), cmap="gray")
         plt.title(f"slice: {random_idx}")
         plt.axis(False);
+
+
+def see_data_sample(img):
+    # TODO: controllare le dimensioni
+
+    img = img["image"]
+    label =  img["label"]
+
+    fig = plt.figure(figsize=(3, 6))
+
+    fig.add_subplot(1, 1, 0)
+    plt.imshow(img[:, :].squeeze(), cmap="gray")
+
+    # TODO: controllare se è ncessario squeeze
+    fig.add_subplot(1, 2, 0)
+    plt.imshow(label[:, :].squeeze(), cmap="gray")

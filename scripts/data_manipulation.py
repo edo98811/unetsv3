@@ -44,7 +44,7 @@ def list_files(dir,imgname,labelname="",filetype="nii.gz"):
 def write_dict(all_files, filename):
     json_object = json.dumps(all_files, indent=4)
 
-    with open(filename +".json", "w") as outfile:
+    with open(filename, "w") as outfile:
         outfile.write(json_object)
 
 def load_dict(filename):

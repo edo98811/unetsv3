@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     print(dataset.__len__())
 
-    example = dataset.__getitem__(int(len/30))
+    example = dataset[int(len/30)]
 
     dv.see_data_sample(example)
 

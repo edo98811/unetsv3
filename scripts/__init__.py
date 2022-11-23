@@ -9,26 +9,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
 import data_manipulation as dm
 import data_visualization as dv
 
-if __name__ == '__main__':
-    basepath =  '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
+from torch.utils import data
 
-    files = dm.list_files(basepath,"*")
-    imglist = []
+if __name__ == '__main__':
+    basepath = '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
+
+
+    # data.dataloader()
+    files = dm.list_files(basepath, "*")
+    img_list = []
+    label_list = []
+    #
+    #
+    #
+    # data = data.DataLoader(
+    #     basepath,
+    #     batch_size=1,
+    #     shuffle=False,
+    #     num_workers=1,
+    #     collate_fn=None,
+    #     pin_memory=True,
+    #)
 
     for filename in files["r_img"]:
-        imglist.append(dm.read_img(filename))
-
-    print(len(imglist))
-    print(imglist[0].shape)
-    print(type(imglist[0]))
-    dv.see_random_slice(imglist[0].dataobj)
+        img_list.append(dm.read_img(filename))
+    for filename in files["r_label"]:
+        label_list.append(dm.read_img(filename))
 
 
-
-
+    print(len(label_list))
+    print(label_list[0].shape)
+    print(type(label_list[0]))
+    dv.see_random_slice(label_list[0].dataobj)
 """
 import data_manipulation as dm
 

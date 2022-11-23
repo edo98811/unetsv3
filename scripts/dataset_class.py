@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from data_manipulation import load_dict, read_img
 from torch.utils.data import Dataset, DataLoader
+from math import floor
 from torchvision import transforms, utils
 
 # TODO: controllare il tipo di dati
@@ -37,7 +38,7 @@ class MriDataset(Dataset):
 
     def __getitem__(self, idx):
 
-        img_n = idx % self.img_dim
+        img_n = floor(idx / self.img_dim)
         img_idx =  idx - (img_n * self.img_dim)
 
         print(img_idx)

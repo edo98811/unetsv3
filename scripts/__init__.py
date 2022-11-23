@@ -28,9 +28,10 @@ if __name__ == '__main__':
     # basepath = '/media/neuropsycad/disk12t/EdoardoFilippiMasterThesis/implementations/unetsv3/dataset2'
     dataset = MriDataset(files_path, 0)
 
-    print(dataset.__len__())
+    dataset_len = dataset.__len__()
+    print(dataset_len)
 
-    example = dataset[torch.int8((len/30))]
+    example = dataset[torch.int8((dataset_len/30))]
 
     dv.see_data_sample(example)
 

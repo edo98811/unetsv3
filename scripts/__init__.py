@@ -21,7 +21,8 @@ if __name__ == '__main__':
 
 
     # data.dataloader()
-    files = dm.list_files(basepath, "*")
+    #files = dm.list_files(basepath, "*")
+    files = dm.load_dict("img_and_annot")
     img_list = []
     label_list = []
     #

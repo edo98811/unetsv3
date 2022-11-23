@@ -15,7 +15,7 @@ import data_manipulation as dm
 import data_visualization as dv
 from dataset_class import MriDataset
 import torch
-
+# TODO : aggiungere metodo per eliminare le slices vuote
 from torch.utils.data import dataloader
 
 from torch.utils import data

@@ -38,7 +38,10 @@ class MriDataset(Dataset):
     def __getitem__(self, idx):
 
         img_n = idx % self.img_dim
-        img_idx =  idx - img_n * self.img_dim
+        img_idx =  idx - (img_n * self.img_dim)
+
+        print(img_idx)
+        print(img_n)
 
 
         # FIXME: aggiungere un controllo che i tipi di dati siano corretti, e aggiungere modo piu veloce di fare questo controllo

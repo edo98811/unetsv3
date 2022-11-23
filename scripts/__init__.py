@@ -33,6 +33,7 @@ if __name__ == '__main__':
 
     example = dataset[int(dataset_len/30)]
 
+    type(example)
     dv.see_data_sample(example)
 
     # data.dataloader()

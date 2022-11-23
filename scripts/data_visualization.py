@@ -13,11 +13,11 @@ def see_random_slice(img):
         plt.axis(False);
 
 
-def see_data_sample(img):
+def see_data_sample(sample):
     # TODO: controllare le dimensioni
 
-    img = img["image"]
-    label =  img["label"]
+    img = sample["image"]
+    label = sample["label"]
 
     fig = plt.figure(figsize=(3, 6))
 

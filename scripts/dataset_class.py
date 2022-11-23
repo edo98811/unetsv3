@@ -15,21 +15,22 @@ from torchvision import transforms, utils
 class MriDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self, data_file_path, dim,  transform=None):
+    def __init__(self, data_file_path, dim, split,  transform=None):
         """
         Args:
-            csv_file (string): Path to the csv file with annotations.
-            root_dir (string): Directory with all the images.
-            transform (callable, optional): Optional transform to be applied
-                on a sample.
+            data_file_path
+            dim
+            split - array (begin, end)
+            transform
         """
         self.data_file_path = data_file_path
         self.data_plane = dim
 
         files = load_dict(data_file_path)
 
-        self.label_list = files["r_annot"]
-        self.dataset_list = files["r_img"]
+        # TODO: migliorare questa cosa
+        self.label_list = files["r_annot"][floor(split[0]*len(files["r_annot"])):floor(split[1]*len(files["r_annot"]))]
+        self.dataset_list = files["r_img"][floor(split[0]*len(files["r_annot"])):floor(split[1]*len(files["r_annot"]))]
         self.img_dim = read_img(self.dataset_list[0]).shape[dim] # poi questo adrà modificato
         self.transform = transform
 
